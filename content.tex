@@ -6,8 +6,8 @@
 
 \subsubsection{Compilation}
 \begin{minted}{bash}
-alias gg="g++ -x c++ -std=c++20 -Wall -Wextra
--DDEBUG -g -O"
+alias gg=``g++ -x c++ -std=c++20 -Wall -Wextra
+-DDEBUG -g -O''
 \end{minted}
 
 \newpage
@@ -121,7 +121,7 @@ We can also determine the (lowest) numbers that form the gcd with the following 
 \code{src/math/fact.cc}
 
 \subsubsection{Miller-Rabin primality test $\mathcal O(\log n)$}
-This primality test works for $n < 2^{64}$. For the \texttt{modPower} function see the "Modular arithmetic" section.
+This primality test works for $n < 2^{64}$. For the \texttt{modPower} function see the ``Modular arithmetic'' section.
 \code{src/math/millerrabin.cc}
 
 \subsubsection{Wilson's theorem}
@@ -319,7 +319,7 @@ Given the angle $\alpha$, the maximum number of points on a circle is $M = \lflo
 \end{table}
 
 \subsubsection{Distance on a sphere}
-Given latitudes $\varphi_1, \varphi_2 \in [-\frac\pi2, \frac\pi2]$ and longitudes $\lambda_1, \lambda_2 \in [-\pi, \pi]$ the distance "as the crow flies" on a sphere with radius $R > 0$ between $(\varphi_1, \lambda_1)$ and $(\varphi_2, \lambda_2)$ is given by $d$:
+Given latitudes $\varphi_1, \varphi_2 \in [-\frac\pi2, \frac\pi2]$ and longitudes $\lambda_1, \lambda_2 \in [-\pi, \pi]$ the distance ``as the crow flies'' on a sphere with radius $R > 0$ between $(\varphi_1, \lambda_1)$ and $(\varphi_2, \lambda_2)$ is given by $d$:
 \begin{align*}
     a &= \sin^2\frac{\varphi_2 - \varphi_1}2 + \cos\varphi_1 \cos\varphi_2 \sin^2\frac{\lambda_2 - \lambda_1}2, \\
     c &= 2\cdot\text{atan2}(\sqrt a, \sqrt{1 - a}), \\
@@ -333,7 +333,7 @@ The number of diagonals of an $n$-sided polygon is $\frac12n(n - 3)$.
 \subsubsection{Weighted average of triangle vertices}
 Given a (proper) triangle in $2$-D space with vertices $v_1, v_2, v_3 \in \mathbb R^2$ and a point $p \in \mathbb R^2$ inside the triangle. The following calculates weights $w_1, w_2, w_3 \in [0, 1]$ such that $p = w_1v_1 + w_2v_2 + w_3v_3$ with $w_1 + w_2 + w_3 = 1$.
 
-Note that this implementation uses the "Distance from a point to a line" formula.
+Note that this implementation uses the ``Distance from a point to a line'' formula.
 \code{src/math/triangleweight.cc}
 
 \subsubsection{Convex hull $\mathcal O(n \log n)$}
@@ -529,7 +529,7 @@ In the case of a complex number, any square root or cube root in the formula for
 \end{align*}
 
 \subsubsection{Binomials $\mathcal O(n)$}
-The binomial "$n$ choose $k$" (typically $k \leq n$) is defined as
+The binomial ``$n$ choose $k$'' (typically $k \leq n$) is defined as
 \begin{align*}
     \binom nk = \frac{n!}{k!(n - k)!}.
 \end{align*}
@@ -572,7 +572,7 @@ When random variables $X_1, \dots, X_n$ are independent and identically distribu
 \end{align*}
 
 \subsubsection{Hölder's inequality}
-For $p, q \in [1, \infty)$ with $\frac1p + \frac1q = 1$ and $f, g$ $\mu$-measurable ("normal" functions) we have
+For $p, q \in [1, \infty)$ with $\frac1p + \frac1q = 1$ and $f, g$ $\mu$-measurable (``normal'' functions) we have
 \begin{align*}
     \int |fg|\ d\mu \leq \left(\int |f|^p\ d\mu\right)^{\frac1p}\left(\int |g|^q\ d\mu\right)^{\frac1q}.
 \end{align*}
@@ -1146,7 +1146,7 @@ The shortest path is found by iteratively picking the shortest edge from a node 
 \code{src/graph/dijkstra.cc}
 
 \subsubsection{Floyd-Warshall $\mathcal O(V^3)$}
-Calculates shortest distances between all nodes by considering a route "via $k$".
+Calculates shortest distances between all nodes by considering a route ``via $k$''.
 \code{src/graph/fw.cc}
 
 \subsubsection{Flood fill reachable nodes $\mathcal O(EM)$}
@@ -1197,7 +1197,7 @@ An undirected graph contains a cycle if and only if $E + C > V$, where $C$ is th
 \code{src/graph/undirectedcycle.cc}
 
 \subsubsection{Directed Graph $\mathcal O(V + E)$}
-A cycle in a directed graph can be detected using DFS, in a similar way to topological sort. The implementation detects if there is a "back edge" in the DFS, which means that there is an edge to a node that is currently on the DFS stack.
+A cycle in a directed graph can be detected using DFS, in a similar way to topological sort. The implementation detects if there is a ``back edge'' in the DFS, which means that there is an edge to a node that is currently on the DFS stack.
 \code{src/graph/directedcycle.cc}
 
 
@@ -1463,7 +1463,7 @@ You can make it so that the hash of an object can be determined based on its ind
 \begin{align*}
     H(s_1s_2\dots s_n) = \sum_{k=1}^n s_kp^{k-1}\mod M,
 \end{align*}
-for some small prime $p$ and large prime $M$ (see "Useful numbers"). This then gives the relations
+for some small prime $p$ and large prime $M$ (see ``Useful numbers''). This then gives the relations
 \begin{align*}
     H(s_1s_2\dots s_ns_{n+1}) &\equiv H(s_1s_2\dots s_n) + s_{n+1}p^{n}, \\
     H(s_0s_1\dots s_n) &\equiv s_0 + pH(s_1s_2\dots s_n), \\
